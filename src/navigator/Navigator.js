@@ -8,8 +8,8 @@ import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LogInScreen from '../screens/LogInScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
-import ReservedScreen from '../screens/ReservedScreen';
 import RentScreen from '../screens/RentScreen';
+import RentPayScreen from '../screens/RentPayScreen'
 
 
 const Drawer = createDrawerNavigator();
@@ -19,6 +19,7 @@ const AuthStack = () => (
   <Stack.Navigator initialRouteName="Welcome">
     <Stack.Screen name="Welcome" component={WelcomeScreen} />
     <Stack.Screen name="Log In" component={LogInScreen} />
+    <Stack.Screen name="Rent Pay" component={RentPayScreen} />
   </Stack.Navigator>
 );
 
@@ -28,7 +29,6 @@ const AppNavigator = () => (
     <Drawer.Screen name="Map" component={MapScreen} />
     <Drawer.Screen name="Profile" component={ProfileScreen} />
     <Drawer.Screen name="Settings" component={SettingsScreen} />
-    <Drawer.Screen name="Reserved parkings" component={ReservedScreen} />
     <Drawer.Screen name="Rent" component={(props) => <RentScreen {...props} />} />
   </Drawer.Navigator>
 );

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../db/firebase-config';
+import { useNavigation } from '@react-navigation/native'; 
 
 const ListRentScreen = () => {
   const [parkingData, setParkingData] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +26,7 @@ const ListRentScreen = () => {
     fetchData();
   }, []);
 
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>List of Rents</Text>
@@ -31,12 +34,17 @@ const ListRentScreen = () => {
         data={parkingData}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
+          <TouchableOpacity
+            style={styles.itemContainer}
+            onPress={() => {
+              navigation.navigate('Rent Pay', { rentDetails: item });
+            }}
+          >
             <Text>Car Type: {item.carType}</Text>
             <Text>Location: {item.location}</Text>
             <Text>Comment: {item.comment}</Text>
             <Text>Price: {item.price}</Text>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>

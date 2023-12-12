@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
 
-const MapScreen = ({ Navigation }) => {
+const MapScreen = () => {
 
   const navigation = useNavigation(); 
 

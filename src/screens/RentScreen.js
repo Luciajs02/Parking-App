@@ -25,7 +25,7 @@ const RentScreen = () => {
   };
 
   const handleConfirmation = () => {
-    console.log('Parking Info:', parkingInfo);
+
   };
 
   const renderPriceItem = ({ item }) => (

@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, Button } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Button, Alert} from 'react-native';
+import { collection, addDoc } from 'firebase/firestore'; 
+import { db } from '../db/firebase-config'
 
-const RentPayScreen = () => {
+const RentPayScreen = ({navigation}) => {
   const [cardNumber, setCardNumber] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvv, setCvv] = useState('');
 
-  const handlePayment = () => {
-    console.log('Do the payment with:', cardNumber, expiry, cvv);
-    // Aquí podrías incluir la lógica para procesar el pago
+  const handlePayment = async () => {
+    try {
+      const docRef = await addDoc(collection(db, 'cardDetails'), {
+        cardNumber,
+        expiry,
+        cvv,
+      });
+      console.log('Card details added with ID: ', docRef.id);
+
+      Alert.alert('Successful Payment', 'Card details saved successfully', [
+        {
+          text: 'OK',
+          onPress: () => navigation.navigate('Map'),
+        },
+      ]);
+      
+    } catch (error) {
+      console.error('Error adding card details: ', error);
+      Alert.alert('Error', 'Failed to save card details. Please try again.');
+    }
   };
 
   return (

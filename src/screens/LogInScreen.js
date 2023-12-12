@@ -27,7 +27,7 @@ const LoginScreen = () => {
   const handleCreateAccount = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log('Account created!');
+        Alert.alert('Account created!');
         const user = userCredential.user;
         console.log(user);
       })
@@ -40,13 +40,13 @@ const LoginScreen = () => {
   const handleSignIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log('Signed in!');
+        Alert.alert('Signed in!');
         const user = userCredential.user;
         console.log(user);
         navigation.navigate('Map');
       })
       .catch((error) => {
-        console.log(error);
+        Alert.alert(error);
       });
   };
 

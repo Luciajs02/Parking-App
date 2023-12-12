@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Button, Modal, TouchableHighlight, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button, Modal, TouchableHighlight, FlatList, Alert} from 'react-native';
 import 'firebase/database';
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../db/firebase-config'
 
 const RentScreen = () => {
@@ -25,27 +25,23 @@ const RentScreen = () => {
     setParkingInfo({ ...parkingInfo, price });
     toggleModal();
   };
-
-  const handleConfirmation = () => {
-
-  };
   
   function create() {
     const { carType, location, comment, price } = parkingInfo;
   
-    const parkingInfoCollectionRef = collection(db, 'parkingInfo'); // Referencia a la colección 'parkingInfo'
+    const parkingInfoCollectionRef = collection(db, 'parkingInfo'); 
   
-    addDoc(parkingInfoCollectionRef, {  // Añadir un documento a la colección 'parkingInfo'
+    addDoc(parkingInfoCollectionRef, {  
       price: price,
       carType: carType,
       location: location,
       comment: comment,
     })
       .then((docRef) => {
-        console.log('Document written with ID: ', docRef.id);
+        Alert.alert('Document written with ID: ', docRef.id);
       })
       .catch((error) => {
-        console.error('Error adding document: ', error);
+        Alert.alert('Error adding document: ', error);
       });
   }
   

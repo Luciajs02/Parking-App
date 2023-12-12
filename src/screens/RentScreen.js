@@ -45,8 +45,6 @@ const RentScreen = () => {
       });
   }
   
-  
-
   const renderPriceItem = ({ item }) => (
     <TouchableHighlight
       style={styles.priceItem}

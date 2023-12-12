@@ -30,6 +30,7 @@ const AppNavigator = () => (
     <Drawer.Screen name="Profile" component={ProfileScreen} />
     <Drawer.Screen name="Settings" component={SettingsScreen} />
     <Drawer.Screen name="Rent" component={(props) => <RentScreen {...props} />} />
+    <Drawer.Screen name="Rent Pay" component={RentPayScreen} />
   </Drawer.Navigator>
 );
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Button } from 'react-native';
 
-const PaymentScreen = () => {
+const RentPayScreen = () => {
   const [cardNumber, setCardNumber] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvv, setCvv] = useState('');
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PaymentScreen;
+export default RentPayScreen;

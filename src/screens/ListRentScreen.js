@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../db/firebase-config';
 import { useNavigation } from '@react-navigation/native'; 
+import RentPayScreen from './RentPayScreen';
 
 const ListRentScreen = () => {
   const [parkingData, setParkingData] = useState([]);

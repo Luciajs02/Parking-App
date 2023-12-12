@@ -20,6 +20,7 @@ import PoliciesScreen from './src/screens/PoliciesScreen';
 import ProblemScreen from './src/screens/ProblemScreen'; 
 import LogOutScreen from './src/screens/LogOutScreen';
 import RentScreen from './src/screens/RentScreen';
+import RentPayScreen from './src/screens/RentPayScreen';
 
 
 const Stack = createStackNavigator();
@@ -83,6 +84,7 @@ const AppNavigator = () => {
         }}
       />
     </Drawer.Navigator>
+    
   );
 };
 
@@ -100,6 +102,7 @@ const AuthNavigator = () => {
       <Stack.Screen name="Terms & Policies" component={PoliciesScreen} />
       <Stack.Screen name="Report a Problem" component={ProblemScreen} />
       <Stack.Screen name="Log Out" component={LogOutScreen} />
+      <Stack.Screen name="Rent Pay" component={RentPayScreen} />
     </Stack.Navigator>
   );
 };

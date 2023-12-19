@@ -7,12 +7,12 @@ import {getFirestore } from "firebase/firestore"
 
 // Your web app's Firebase configuration
 export const firebaseConfig = {
-  apiKey: "AIzaSyDy_AnCiEtfZ3dyMeWVmI9y5UFaWHwG8SE",
+  apiKey: "",
   authDomain: "brno-inn.firebaseapp.com",
   projectId: "brno-inn",
   storageBucket: "brno-inn.appspot.com",
   messagingSenderId: "576983149504",
-  appId: "1:576983149504:web:c6c48c291b58940b523625"
+  appId: ""
 };
 
 const app = initializeApp(firebaseConfig);

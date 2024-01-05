@@ -44,6 +44,9 @@ const MapScreen = () => {
   const [selectedMarker33, setSelectedMarker33] = React.useState(null);
   const [selectedMarker34, setSelectedMarker34] = React.useState(null);
 
+  const closeBox = () => {
+    setSelectedMarker(null);
+  };
   const closeBox2 = () => {
     setSelectedMarker2(null);
   };

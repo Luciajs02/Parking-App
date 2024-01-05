@@ -7,17 +7,14 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import LogInScreen from './src/screens/LogInScreen';
 import MapScreen from './src/screens/MapScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import Securitycreen from './src/screens/SecurityScreen';
 import ReservedScreen from './src/screens/ListRentScreen';
 import PaymentScreen from './src/screens/PaymentScreen';
 import NotificationScreen from './src/screens/NotificationScreen';
-import PrivacyScreen from './src/screens/PrivacyScreen';
 import SubscriptionScreen from './src/screens/SubscriptionScreen';
 import SuportScreen from './src/screens/SuportScreen';
 import PoliciesScreen from './src/screens/PoliciesScreen';
-import ProblemScreen from './src/screens/ProblemScreen'; 
 import LogOutScreen from './src/screens/LogOutScreen';
 import RentScreen from './src/screens/RentScreen';
 import RentPayScreen from './src/screens/RentPayScreen';
@@ -66,15 +63,6 @@ const AppNavigator = () => {
         }}
       />
       <Drawer.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          drawerIcon: ({ focused, color, size }) => (
-            <Icon name={focused ? 'ios-person' : 'ios-person-outline'} size={size} color={color} />
-          ),
-        }}
-      />
-      <Drawer.Screen
         name="Settings"
         component={SettingsScreen}
         options={{
@@ -95,12 +83,10 @@ const AuthNavigator = () => {
       <Stack.Screen name="Log In" component={LogInScreen} />
       <Stack.Screen name="Security" component={Securitycreen} />
       <Stack.Screen name="Notifications" component={NotificationScreen} />
-      <Stack.Screen name="Privacy" component={PrivacyScreen} />
       <Stack.Screen name="Payment configurations" component={PaymentScreen} />
       <Stack.Screen name="My Subscription" component={SubscriptionScreen} />
       <Stack.Screen name="Help & Support" component={SuportScreen} />
       <Stack.Screen name="Terms & Policies" component={PoliciesScreen} />
-      <Stack.Screen name="Report a Problem" component={ProblemScreen} />
       <Stack.Screen name="Log Out" component={LogOutScreen} />
       <Stack.Screen name="Rent Pay" component={RentPayScreen} />
     </Stack.Navigator>
